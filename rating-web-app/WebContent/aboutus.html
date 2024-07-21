@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a5ea36088f.js" crossorigin="anonymous"></script>
+    <title>About Us - Ocean Glow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;          
+            justify-content: center;
+            background-color: #f1f1f1;
+        }
+        .logo {
+  width: 250px; 
+  height: 50px; 
+  margin-right: 60px; 
+  position: absolute;
+  vertical-align: middle;
+  top: 30px;
+  left: 25px;
+}
+
+.fix {
+
+  width: 100%;
+  z-index: 100;
+}
+
+.logo-container {
+  background-color: #f9f9ff;
+  padding: 8px 0;
+  box-shadow: 0px 3px 0px #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* To align logo to the left and navigation to the right */
+}
+
+.center {
+  text-align: center;
+}
+
+section {
+  
+  padding-bottom: 10px; /* Adjust this value to control spacing */
+  
+}
+
+nav {
+  margin: left;
+  background: #f9f9ff;
+  padding: 8px 0;
+  box-shadow: 0px 3px 0px #ececec;
+}
+
+nav ul {
+  list-style: none;
+  text-align: right; 
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 5px; /* Add some spacing between navigation links */
+}
+nav ul li a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 800;
+  font-size: 17.5px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  margin: 8px 8px 8px 5px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  position: relative;
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #333;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+#bn {
+  background-color: #3b49e6;
+  border-radius: 7px;
+}
+       
+        .about {
+            background: url('picture/hotel.jpg') no-repeat left;
+            background-size: 60%;
+            background-color: #fff;
+            overflow: hidden;
+            padding: 100px 20px ;
+        }
+        .inner-section {
+            width: 55%;
+            float: right;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .inner-section h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+        .text {
+            font-size: 16px;
+            color: #545454;
+            line-height: 1.5;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .skills button {
+            font-size: 20px;
+            text-align: center;
+            letter-spacing: 2px;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: #00999c;
+            color: white;
+            cursor: pointer;
+        }
+        .skills button:hover {
+            transition: 0.5s;
+            background-color: #134748;
+        }
+        @media screen and (max-width: 1200px) {
+            .inner-section {
+                padding: 30px;
+            }
+        }
+        @media screen and (max-width: 1000px) {
+            .about {
+                background-size: 100%;
+                padding: 80px 40px;
+            }
+            .inner-section {
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .about {
+                padding: 0;
+            }
+            .inner-section {
+                padding: 20px;
+            }
+            .skills button {
+                font-size: 18px;
+                padding: 8px 16px;
+            }
+        }
+
+        <!--footer-->
+        footer {
+    position: absolute;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+footer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*specific styles*/
+
+.footer-outer-container{
+    background-color: #010c80;
+    color: white;
+    padding: 40px;
+    margin: 0px;
+}
+
+.footer-inner-container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.footer-col{
+    display: flex;
+    width: auto;
+    padding: 10px;
+    align-items: center;
+}
+
+.footer-col-qlinks{
+    
+    width: 200px;
+    height: 150px;
+}
+
+.footer-col-follow{
+    
+    width: 200px;
+    height: 150px;
+}
+
+.footer-col-phone{
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    height: 115px;
+}
+
+.footer-col-address{
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    height: 115px;
+}
+
+.footer-col-email{
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    height: 115px;
+}
+
+.img{
+
+top: 70px;
+right: 50px;
+width: 250px;
+height:50px;
+
+
+}
+
+
+
+#text-icons{
+    display: flex;
+    align-items: top;
+}
+
+.footer-col i{
+    margin: 10px 10px 10px 0px;
+}
+    </style>
+</head>
+<body>
+    <div class="fix">
+        <section style="background: #ffffff; color: #000000;">
+          <div class="logo-container">
+            <img src="picture\download (3).png" alt="log" class="logo">
+          </div>
+        
+          <nav class="stroke">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="aboutus.html">About</a></li>
+              <li><a href="contactus.html">Contact Us</a></li>
+              <li><a href="#">Log In</a></li>
+              <li><a href="#">Sign Up</a></li>
+              <li id="bn"><a href="#">Book Now</a></li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+    <div class="about">
+        <div class="inner-section">
+            <h1>About Ocean Glow</h1>
+            <p class="text">
+                Ocean Glow is your premier destination for hotel reservations, offering you the finest accommodations and a seamless booking experience. We've been in the business for over a decade, connecting millions of travelers to their dream getaways.
+
+                Our extensive hotel selection ensures you'll find the perfect place for your travels. With a user-friendly interface, secure payment options, and 24/7 customer support, we prioritize your convenience and safety.
+
+                Join us today to experience the world of hassle-free hotel reservations. Whether it's a business trip or a leisurely escape, Ocean Glow is your trusted partner for a memorable stay.
+            </p>
+            <div class="skills">
+                <a href="contactus.html">
+                    <button>Contact Us</button>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script>
+        var images = ['picture/hotel1.jpg', 'picture/hotel2.jpg', 'picture/hotel3.jpg'];
+        var currentIndex = 0;
+        var aboutSection = document.querySelector('.about');
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            aboutSection.style.backgroundImage = 'url(' + images[currentIndex] + ')';
+        }
+
+        setInterval(changeImage, 5000);
+    </script>
+
+<footer>
+    <div class="footer-outer-container">
+            <div class="footer-inner-container">
+                    <div class="footer-col">
+                            <div class="footer-col-qlinks">
+                                    <h4>Quick Links</h4>
+                                    <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="aboutus.html">About Us</a></li>
+                                    <li><a href="#">Terms and Conditions</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    </ul>
+                            </div>
+                    </div>
+                    <div class="footer-col">
+                            <div class="footer-col-follow">
+                                    <h4>Follow Us</h4>
+                                    <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                                    <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                            </div>
+                    </div>
+                    <div class="footer-col" id="text-icons">
+                            <div class="footer-col-phone">
+                                    <i id="phone" class="fas fa-square-phone fa-lg"></i>
+                                    <span><section><p>091-7617899<br>091-7617899</p></section></span>
+                            </div>
+                    </div>
+                    <div class="footer-col" id="text-icons">
+                            <div class="footer-col-address">
+                                    <span>
+                                    <i class="fas fa-location-dot fa-lg"></i><br>
+                                    <span>No.234,FlowerLane,<br>Galle Road,<br>Unawatuna, Sri Lanka</span></span>
+                            </div>
+                    </div>
+                    <div class="footer-col" id="text-icons">
+                            <div class="footer-col-email">
+                                    <span>
+                                    <i class="fas fa-envelope fa-lg"></i>
+                                    <span>oceanglow31@gmail.com</span></span>
+                            </div>
+                    </div>
+
+                    <div class="image">
+                            <img src = "picture/logowhite2.png" class="img">
+                    </div>                 
+            </div>
+    </div>
+</footer>
+</body>
+</html>

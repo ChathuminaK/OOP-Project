@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Ocean Glow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a5ea36088f.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;   
+            background-color: #f3f5f5;
+            margin: 0; /* Reset default margin */
+            padding: 0; /* Reset default padding */
+        }
+        .logo {
+            width: 250px; 
+            height: 50px; 
+            margin-right: 60px;
+            position: absolute;
+            vertical-align: middle;
+            top: 10px; /* Adjust this value to set the header at the top */
+            left: 25px;
+        }
+        .fix {
+            
+            width: 100%;
+            z-index: 100;
+        }
+        .logo-container {
+            background-color: #f9f9ff;
+            padding: 8px 0;
+            box-shadow: 0px 3px 0px #ececec;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .center {
+            text-align: center;
+        }
+        section.header {
+            background: #ffffff;
+            color: #000000;
+            padding-bottom: 10px;
+        }
+        nav {
+            margin: 0;
+            background: #f9f9ff;
+            padding: 8px 0;
+            box-shadow: 0px 3px 0px #ececec;
+        }
+        nav ul {
+            list-style: none;
+            text-align: right;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 5px;
+        }
+        nav ul li a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: #000000;
+            font-weight: 800;
+            font-size: 17.5px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-transform: uppercase;
+            margin: 8px 8px 8px 5px;
+        }
+        nav ul li a,
+        nav ul li a:after,
+        nav ul li a:before {
+            position: relative;
+            transition: all .5s;
+        }
+        nav ul li a:hover {
+            color: #555;
+        }
+        nav.stroke ul li a,
+        nav.fill ul li a {
+            position: relative;
+        }
+        nav.stroke ul li a:after,
+        nav.fill ul li a:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 0%;
+            content: '.';
+            color: transparent;
+            background: #333;
+            height: 1px;
+        }
+        nav.stroke ul li a:hover:after {
+            width: 100%;
+        }
+        nav.fill ul li a {
+            transition: all 2s;
+        }
+        #bn {
+            background-color: #3b49e6;
+            border-radius: 7px;
+        }
+        .container {
+            width: 85%;
+            background: #fff;
+            border-radius: 6px;
+            padding: 20px 60px 30px 40px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+
+        }
+        .container .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .container .content .left-side {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            position: relative;
+        }
+        .content .left-side::before {
+            content: '';
+            position: absolute;
+            height: 70%;
+            width: 2px;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #afafb6;
+        }
+        .content .left-side .details {
+            margin: 14px;
+            text-align: center;
+        }
+        .content .left-side .details i {
+            font-size: 30px;
+            color: #40afbe;
+            margin-bottom: 10px;
+        }
+        .content .left-side .details .topic {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .content .left-side .details .text-one,
+        .content .left-side .details .text-two {
+            font-size: 14px;
+            color: #3e3e69;
+        }
+        .container .content .right-side {
+            width: 75%;
+            margin-left: 75px;
+        }
+        .content .right-side .topic-text {
+            font-size: 23px;
+            font-weight: 600;
+            color: #5231ad;
+        }
+        .right-side .input-box {
+            height: 50px;
+            width: 100%;
+            margin: 12px 0;
+        }
+        .right-side .input-box input,
+        .right-side .input-box textarea {
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: #F0F1F8;
+            border-radius: 6px;
+            padding: 0 15px;
+            resize: none;
+        }
+        .right-side .message-box {
+            min-height: 110px;
+        }
+        .right-side .input-box textarea {
+            padding-top: 6px;
+        }
+        .right-side .button {
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+        }
+        .right-side .button input[type="button"] {
+            color: #fff;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: #4bb4d5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .button input[type="button"]:hover {
+            background: #4471db;
+        }
+        @media (max-width: 950px) {
+            .container {
+                width: 90%;
+                padding: 30px 40px 40px 35px;
+            }
+            .container .content .right-side {
+                width: 75%;
+                margin-left: 55px;
+            }
+        }
+        @media (max-width: 820px) {
+            .container {
+                margin: 40px 0;
+                height: 100%;
+            }
+            .container .content {
+                flex-direction: column-reverse;
+            }
+            .container .content .left-side {
+                width: 100%;
+                flex-direction: row;
+                margin-top: 40px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .container .content .left-side::before {
+                display: none;
+            }
+            .container .content .right-side {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        <!--footer-->
+        footer {
+    position: absolute;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+footer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*specific styles*/
+
+.footer-outer-container{
+    background-color: #010c80;
+    color: white;
+    padding: 40px;
+    margin: 0px;
+}
+
+.footer-inner-container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.footer-col{
+    display: flex;
+    width: auto;
+    padding: 10px;
+    align-items: center;
+}
+
+.footer-col-qlinks{
+    
+    width: 200px;
+    height: 150px;
+}
+
+.footer-col-follow{
+    
+    width: 200px;
+    height: 150px;
+}
+
+.footer-col-phone{
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    height: 115px;
+}
+
+.footer-col-address{
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    height: 115px;
+}
+
+.footer-col-email{
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    height: 115px;
+}
+
+.img{
+
+    top: 30px;
+    right: 30px;
+    width: 250px;
+    height:50px;
+    
+    
+}
+
+
+#text-icons{
+    display: flex;
+    align-items: top;
+}
+
+.footer-col i{
+    margin: 10px 10px 10px 0px;
+}
+    </style>
+</head>
+<body>
+    <div class="fix">
+        <section class="header">
+            <div class="logo-container">
+                <img src="picture\download (3).png" alt="log" class="logo">
+            </div>
+            <nav class="stroke">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                    <li id="bn"><a href="#">Book Now</a></li>
+                </ul>
+            </nav>
+        </section>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="left-side">
+                <div class="address details">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="topic">Address</div>
+                    <div class="text-one">No.234,FlowerLane,</div>
+                    <div class="text-two">Galle Road,
+                        Unawatuna</div>
+                </div>
+                <div class="phone details">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="topic">Phone</div>
+                    <div class="text-one">091-7617899</div>
+                    <div class="text-two">091-7617899</div>
+                </div>
+                <div class ="email details">
+                    <i class="fas fa-envelope"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one">oceanglow31@gmail.com</div>
+                    <div class="text-two">info.oceanglow31@gmail.com</div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="topic-text">Send us a message</div>
+                <p>If you have any work from me or any types of queries related to my tutorial, you can send me a message from here. It's my pleasure to help you.</p>
+                <form action="#">
+                    <div class="input-box">
+                        <input type="text" placeholder="Enter your name">
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Enter your email">
+                    </div>
+                    <div class="input-box message-box">
+                        <textarea placeholder="Your message"></textarea>
+                    </div>
+                    <div class="button">
+                        <a href="contactus.html">
+                        <input type="button" value="Send Now">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-outer-container">
+                <div class="footer-inner-container">
+                        <div class="footer-col">
+                                <div class="footer-col-qlinks">
+                                        <h4>Quick Links</h4>
+                                        <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="aboutus.html">About Us</a></li>
+                                        <li><a href="#">Terms and Conditions</a></li>
+                                        <li><a href="#">FAQ</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                        <div class="footer-col">
+                                <div class="footer-col-follow">
+                                        <h4>Follow Us</h4>
+                                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+                                        <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                                </div>
+                        </div>
+                        <div class="footer-col" id="text-icons">
+                                <div class="footer-col-phone">
+                                        <i id="phone" class="fas fa-square-phone fa-lg"></i>
+                                        <span><section><p>091-7617899<br>091-7617899</p></section></span>
+                                </div>
+                        </div>
+                        <div class="footer-col" id="text-icons">
+                                <div class="footer-col-address">
+                                        <span>
+                                        <i class="fas fa-location-dot fa-lg"></i><br>
+                                        <span>No.234,FlowerLane,<br>Galle Road,<br>Unawatuna, Sri Lanka</span></span>
+                                </div>
+                        </div>
+                        <div class="footer-col" id="text-icons">
+                                <div class="footer-col-email">
+                                        <span>
+                                        <i class="fas fa-envelope fa-lg"></i>
+                                        <span>oceanglow31@gmail.com</span></span>
+                                </div>
+                        </div>
+    
+                        <div class="image">
+                                <img src = "picture/logowhite2.png" class="img">
+                        </div>
+                        
+                        
+                        
+                </div>
+        </div>
+    </footer>
+
+</body>
+</html>

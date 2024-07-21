@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<queries>
+
+	<query id ="create_rating_table">
+		<![CDATA[
+			
+			CREATE TABLE ratings(
+				ratingId varchar(10) not null,
+				starno varchar(5),
+				comment varchar(100),
+				PRIMARY KEY(ratingId)
+			);
+		]]>
+	</query>
+	
+	
+	<query id ="insert_rating">
+		<![CDATA[
+			INSERT INTO ratings(ratingId, starno, comment)
+			VALUES(?,?,?); 
+		]]>
+	</query>
+	
+	
+	<query id ="rating_ids">
+		<![CDATA[
+			SELECT ratingId FROM ratings; 
+		]]>
+	</query>
+	
+	
+	<query id ="get_rating_all_ratings">
+		<![CDATA[
+			SELECT * FROM ratings; 
+		]]>
+	</query>
+	
+	
+	<query id ="get_rating_by_id">
+		<![CDATA[
+			SELECT * FROM ratings WHERE ratingId = ?; 
+		]]>
+	</query>
+	
+	
+	<query id ="update_rating">
+		<![CDATA[
+			UPDATE ratings 
+			SET starno = ?,comment = ?
+			WHERE ratingId = ?;
+		]]>
+	</query>
+	
+	
+	<query id ="delete_rating">
+		<![CDATA[
+			DELETE FROM ratings 
+			WHERE ratingId = ?;
+		]]>
+	</query>
+	
+	
+</queries>
